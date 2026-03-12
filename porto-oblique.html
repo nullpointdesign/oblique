@@ -230,6 +230,52 @@
       border-left: 1px solid rgba(200,160,80,0.25);
     }
 
+    /* ── FULL BLEED IMAGE ───────────────────────────────── */
+    .full-bleed {
+      position: relative;
+      height: 85vh;
+      overflow: hidden;
+    }
+
+    .full-bleed img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.05) saturate(0.9);
+      transform: scale(1.02);
+      transition: transform 8s ease-out;
+      display: block;
+    }
+
+    .full-bleed img.loaded { transform: scale(1); }
+
+    .full-bleed-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 6rem 8vw 3rem;
+      background: linear-gradient(to top, rgba(8,8,6,0.85), transparent);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .fbc-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 2.5vw, 2rem);
+      font-style: italic;
+      color: var(--white);
+    }
+
+    .fbc-meta {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--fog);
+      text-align: right;
+    }
+
     /* ── PORTFOLIO GRID ─────────────────────────────────── */
     .portfolio {
       padding: 8rem 4vw;
@@ -634,32 +680,163 @@
       <div class="gi-caption">Porto · Centro · 2023</div>
     </div>
 
-    <!-- 5. Parar o Gas wall -->
-    <div class="masonry-item reveal" data-caption="Porto · Parar o Gás · 2023">
-      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/IMG_4942_wtnhnf.jpg" alt="Parar o Gas wall, Porto">
-      <div class="gi-caption">Porto · Parar o Gás · 2023</div>
-    </div>
-
-    <!-- 7. Cada um é reflexo mural -->
+    <!-- 5. Cada um é reflexo mural -->
     <div class="masonry-item reveal" data-caption="Matosinhos · Reflexo · 2024">
       <img src="https://res.cloudinary.com/djidjwtsz/image/upload/IMG_5314_gspbmd.jpg" alt="Cada um e reflexo da sua cultura mural">
       <div class="gi-caption">Matosinhos · Reflexo · 2024</div>
     </div>
 
-    <!-- 9. Bolhão ironwork column -->
-    <div class="masonry-item reveal" data-caption="Mercado do Bolhão · 2023">
-      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/IMG_5035_d4rama.jpg" alt="Bolhão market ironwork column">
-      <div class="gi-caption">Mercado do Bolhão · 2023</div>
-    </div>
-
-    <!-- 11. Airport Christmas night — closer -->
+    <!-- 6. Airport Christmas lights -->
     <div class="masonry-item reveal" data-caption="Aeroporto Francisco Sá Carneiro · Natal · 2023">
       <img src="https://res.cloudinary.com/djidjwtsz/image/upload/IMG_5609_03_jltsjj.jpg" alt="Airport Christmas lights, Porto">
       <div class="gi-caption">Aeroporto · Natal · 2023</div>
     </div>
 
+    <!-- 7. Stalking man street -->
+    <div class="masonry-item reveal" data-caption="Porto · Rua · 2023">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/IMG_5037_02_mxkhwl.jpg" alt="Street scene, Porto">
+      <div class="gi-caption">Porto · Rua · 2023</div>
+    </div>
+
+    <!-- 8. Airport silhouette B&W -->
+    <div class="masonry-item reveal" data-caption="Aeroporto · 2023">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/IMG_5107_t41spz.jpg" alt="Airport silhouette, Porto">
+      <div class="gi-caption">Aeroporto · 2023</div>
+    </div>
+
+    <!-- 9. Bolhão interior looking out -->
+    <div class="masonry-item reveal" data-caption="Mercado do Bolhão · 2023">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/IMG_5036_01_tl6q4h.jpg" alt="Bolhão market interior, Porto">
+      <div class="gi-caption">Mercado do Bolhão · 2023</div>
+    </div>
+
+    <!-- 10. Airport metro platform exterior -->
+    <div class="masonry-item reveal" data-caption="Aeroporto · Metro · 2023">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/IMG_5108_b4fpm4.jpg" alt="Airport metro platform, Porto">
+      <div class="gi-caption">Aeroporto · Metro · 2023</div>
+    </div>
+
+    <!-- 11. Shadow self-portrait -->
+    <div class="masonry-item reveal" data-caption="Porto · Sombra · 2023">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/0B4EBF10-21DB-493A-A74D-44FADA60EC81_1_105_c_kgswuh.jpg" alt="Shadow self-portrait, Porto">
+      <div class="gi-caption">Porto · Sombra · 2023</div>
+    </div>
+
+    <!-- 12. Black sculpture, Norte Shopping Matosinhos -->
+    <div class="masonry-item reveal" data-caption="Matosinhos · Escultura · 2024">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/DCF5183E-0BEA-478A-98BE-62723AF9DF07_1_105_c_x2ofw6.jpg" alt="Black sculpture, Norte Shopping Matosinhos">
+      <div class="gi-caption">Matosinhos · Escultura · 2024</div>
+    </div>
+
+    <!-- 13. Não Me Apaguem doorway -->
+    <div class="masonry-item reveal" data-caption="Porto · Não Me Apaguem · 2023">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/IMG_4841_mswoy8.jpg" alt="Não Me Apaguem doorway, Porto">
+      <div class="gi-caption">Porto · Não Me Apaguem · 2023</div>
+    </div>
+
+    <!-- 14. Cat in hat poster -->
+    <div class="masonry-item reveal" data-caption="Porto · 2024">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/IMG_7152_Edited_lyreuu.jpg" alt="Cat in hat poster, Porto">
+      <div class="gi-caption">Porto · 2024</div>
+    </div>
+
+    <!-- 15. J'existe -->
+    <div class="masonry-item reveal" data-caption="Porto · J'existe · 2024">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/IMG_5536_rscvsy.jpg" alt="J'existe, Porto">
+      <div class="gi-caption">Porto · J'existe · 2024</div>
+    </div>
+
+    <!-- 16. Nuit graffiti house -->
+    <div class="masonry-item reveal" data-caption="Porto · Nuit · 2023">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/IMG_4819_php2uw.jpg" alt="Nuit graffiti house, Porto">
+      <div class="gi-caption">Porto · Nuit · 2023</div>
+    </div>
+
+    <!-- 17. Porto through sunglass lens — title candidate -->
+    <div class="masonry-item reveal" data-caption="Porto · Oblique · 2024">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/B5227EEA-DFE5-45F9-9DAE-0D7DCC20C77E_1_105_c_wqlaq6.jpg" alt="Porto through sunglass lens">
+      <div class="gi-caption">Porto · Oblíquo · 2024</div>
+    </div>
+
+    <!-- 18. Casas para viver -->
+    <div class="masonry-item reveal" data-caption="Porto · Casas para Viver · 2024">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/30CC5F2C-4FD0-4E70-9644-1D1FBC1388EF_1_105_c_rwectt.jpg" alt="Casas para viver, Porto">
+      <div class="gi-caption">Porto · Casas para Viver · 2024</div>
+    </div>
+
+    <!-- 19. VOID wall — NEW -->
+    <div class="masonry-item reveal" data-caption="Porto · Void · 2024">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/BF8C1F3F-EE08-4ADF-B5EF-216B03182555_1_105_c_p2qjam.jpg" alt="VOID graffiti wall, Porto">
+      <div class="gi-caption">Porto · Void · 2024</div>
+    </div>
+
+    <!-- 20. Saint of Lost Tiles — NEW -->
+    <div class="masonry-item reveal" data-caption="Porto · The Saint of Lost Tiles · 2024">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/4BC1AE83-F21B-4CD3-9574-E9078ACF5022_1_105_c_pvptwp.jpg" alt="The Saint of Lost Tiles, Porto">
+      <div class="gi-caption">Porto · O Santo dos Azulejos Perdidos · 2024</div>
+    </div>
+
+    <!-- 21. Hôtel de Paris threshold -->
+    <div class="masonry-item reveal" data-caption="Porto · Hôtel de Paris · 2024">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/9871D0D4-D634-4FE2-AC02-03109C91BB95_1_105_c_otfwhc.jpg" alt="Hôtel de Paris threshold, Porto">
+      <div class="gi-caption">Porto · Hôtel de Paris · 2024</div>
+    </div>
+
+    <!-- 22. Woman in red / giant face — cover candidate -->
+    <div class="masonry-item reveal" data-caption="Porto · 2024">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/776111A9-E24E-4762-8C17-509C7182F160_1_105_c_lwzr69.jpg" alt="Woman in red coat walking past giant face mural, Porto">
+      <div class="gi-caption">Porto · 2024</div>
+    </div>
+
+    <!-- 23. Shadow self-portrait B&W, tree shadow -->
+    <div class="masonry-item reveal" data-caption="Porto · Sombra · 2024">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/B507EC0E-FCBF-4411-8383-33D96BF841B1_1_105_c_nl7stl.jpg" alt="Shadow self-portrait with tree shadow, Porto">
+      <div class="gi-caption">Porto · Sombra · 2024</div>
+    </div>
+
+    <!-- 24. Rooftops looking straight down, hi-vis workers -->
+    <div class="masonry-item reveal" data-caption="Porto · Telhados · 2024">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/98CA748A-2847-4FED-BABD-C27910206414_1_105_c_axnlwj.jpg" alt="Rooftops from above with workers, Porto">
+      <div class="gi-caption">Porto · Telhados · 2024</div>
+    </div>
+
+    <!-- 25. Shadow on rooftop, Porto skyline -->
+    <div class="masonry-item reveal" data-caption="Porto · Sombra · 2024">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/897A56B7-BFC9-43DA-8A93-8CCE7E89DF3A_1_105_c_y3dhql.jpg" alt="Shadow self-portrait on rooftop with Porto skyline">
+      <div class="gi-caption">Porto · Sombra · 2024</div>
+    </div>
+
+    <!-- 26. Square from above, lone figure, teal scaffold -->
+    <div class="masonry-item reveal" data-caption="Porto · Praça · 2024">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/F9D12BF0-94B1-4E86-86D6-2D902107E030_1_105_c_mq96vs.jpg" alt="Square from above with lone figure and teal scaffold building, Porto">
+      <div class="gi-caption">Porto · Praça · 2024</div>
+    </div>
+
+    <!-- 27. Unknown — to identify -->
+    <div class="masonry-item reveal" data-caption="Porto · 2024">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/01D18DFC-9134-4DF3-B8AC-BF61AD034CB5_1_105_c_vquhih.jpg" alt="Porto">
+      <div class="gi-caption">Porto · 2024</div>
+    </div>
+
+    <!-- 28. Unknown — to identify -->
+    <div class="masonry-item reveal" data-caption="Porto · 2024">
+      <img src="https://res.cloudinary.com/djidjwtsz/image/upload/F8B3CF01-0BB5-4AF4-A184-6CE6D4E60A07_1_105_c_a6zuf4.jpg" alt="Porto">
+      <div class="gi-caption">Porto · 2024</div>
+    </div>
+
   </div>
 </section>
+
+<!-- FULL BLEED #2 -->
+<div class="full-bleed reveal">
+  <img src="https://res.cloudinary.com/djidjwtsz/image/upload/IMG_5314_gspbmd.jpg"
+       alt="Cada um e reflexo da sua cultura mural, Matosinhos"
+       onload="this.classList.add('loaded')">
+  <div class="full-bleed-caption">
+    <div class="fbc-title">Cada um é reflexo da sua cultura</div>
+    <div class="fbc-meta">Matosinhos · 2024<br>Catherine Anderson</div>
+  </div>
+</div>
 
 <!-- THE PITCH -->
 <section class="pitch">
