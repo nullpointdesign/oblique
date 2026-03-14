@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Porto, Oblique — Coffee Table Book Pitch</title>
+    <!-- Google Fonts: Bebas Neue, Oswald, Cormorant Garamond, Jost -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Karla:wght@200;300;400&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* ── ROOT VARIABLES ── */
+        :root {
+            --ink: #080806;
+            --deep: #100f0d;
+            --stone: #1e1c18;
+            --azulejo: #2a4a6a;
+            --tile: #4a7a9b;
+            --gold: #c8a050;
+            --gold-light: #e8c080;
+            --fog: #6a6560;
+            --light: #c8c0b0;
+            --parchment: #e8e0d0;
+            --white: #f5f0e8;
+            --max-width: 44rem;
+            --footer-size: 26px;
+            --footer-dot: 3px;
+            --footer-opacity: 0.6;
+            --footer-opacity-hover: 1.0;
+        }
+
+        /* ── RESET & BASE ── */
+        html {
+            box-sizing: border-box;
+            background: var(--ink);
+            color: var(--light);
+            font-family: 'Karla', sans-serif;
+            font-weight: 300;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+        *, *:before, *:after { box-sizing: inherit; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: var(--ink);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+        main {
+            flex: 1 0 auto;
+            max-width: var(--max-width);
+            margin: 2.5rem auto 0 auto;
+            padding: 1.5rem;
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        main > h1 {
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(200,160,80,0.2);
+            margin-bottom: 0.5rem;
+        }
+
+        main > h1 + h2 {
+            margin-top: 0;
+            margin-bottom: 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--fog);
+            font-style: normal;
+        }
+
+        /* ── TYPOGRAPHY ── */
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-weight: 300;
+            font-style: italic;
+            margin: 0 0 0.5em 0;
+            letter-spacing: -0.02em;
+            color: var(--gold);
+            line-height: 1.1;
+        }
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-style: italic;
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            margin: 2.2em 0 0.7em 0;
+            letter-spacing: -0.01em;
+            color: var(--parchment);
+            line-height: 1.2;
+        }
+        p, li {
+            font-size: 1rem;
+            color: var(--light);
+            font-weight: 300;
+        }
+        ul {
+            padding-left: 1.2em;
+            margin: 0.5em 0 1.5em 0;
+        }
+        strong {
+            color: var(--gold);
+            font-weight: 400;
+        }
+        blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2em;
+            font-style: italic;
+            color: var(--parchment);
+            border-left: 2px solid var(--gold);
+            margin: 1.5em 0;
+            padding: 0.5em 1em;
+            background: transparent;
+        }
+
+        /* ── SECTION STYLING ── */
+        section.reveal {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(200,160,80,0.15);
+        }
+
+        section.reveal:first-of-type {
+            padding-top: 1rem;
+        }
+
+        .section-label {
+            font-size: 0.58rem;
+            letter-spacing: 0.45em;
+            text-transform: uppercase;
+            color: var(--tile);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        /* ── OPENING FLOURISH ── */
+        main::before {
+            content: '';
+            display: block;
+            width: 2rem;
+            height: 1px;
+            background: var(--gold);
+            margin-bottom: 2rem;
+            opacity: 0.6;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            main {
+                margin: 0.5rem 0 0 0;
+                padding: 1rem;
+            }
+            h1 { font-size: 2rem; }
+        }
+
+        /* ── FOOTER LAYOUT ── */
+        footer {
+            flex-shrink: 0;
+            width: 100%;
+            margin-top: 3rem;
+            background: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            gap: 2rem;
+            flex-wrap: nowrap;
+        }
+
+        .footer-copyright {
+            font-size: 0.55rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--fog);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .npd-footer-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+            footer {
+                flex-wrap: wrap;
+                flex-direction: column;
+                justify-content: center;
+                padding: 1.5rem;
+                text-align: center;
+            }
+            .footer-copyright {
+                order: 1;
+                width: 100%;
+                font-size: 0.5rem;
+            }
+            .npd-footer-container {
+                order: 2;
+                margin-top: 1rem;
+                flex-direction: column;
+            }
+        }
+        .npd-footer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            opacity: var(--footer-opacity);
+            transition: opacity 0.25s;
+            gap: 0.5em;
+            user-select: none;
+        }
+        .npd-footer:hover {
+            opacity: var(--footer-opacity-hover);
+        }
+        .npd-box {
+            width: var(--footer-size);
+            height: var(--footer-size);
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: transparent;
+            flex-shrink: 0;
+        }
+        .npd-n {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.85rem;
+            color: var(--gold);
+            letter-spacing: 0.01em;
+            line-height: 1;
+            position: relative;
+            z-index: 1;
+            user-select: none;
+        }
+        .npd-dot {
+            position: absolute;
+            right: 2px;
+            bottom: 2px;
+            width: var(--footer-dot);
+            height: var(--footer-dot);
+            background: var(--gold);
+            border-radius: 50%;
+            z-index: 2;
+        }
+        .npd-credit {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 300;
+            font-size: 0.55rem;
+            color: var(--fog);
+            margin: 0;
+            letter-spacing: 0.25em;
+            text-align: center;
+            text-decoration: none;
+            transition: color 0.2s;
+            text-transform: uppercase;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .npd-credit:hover {
+            color: var(--light);
+        }
+
+        /* ── SCROLL REVEAL ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s cubic-bezier(.6,.2,.3,1), transform 0.7s cubic-bezier(.6,.2,.3,1);
+            will-change: opacity, transform;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ── MASONRY GALLERY ── */
+        .portfolio {
+            padding: 6rem 4vw;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .portfolio-header {
+            padding: 0 4vw 4rem;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .portfolio-label {
+            font-size: 0.58rem;
+            letter-spacing: 0.45em;
+            text-transform: uppercase;
+            color: var(--tile);
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--parchment);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .masonry {
+            columns: 3;
+            column-gap: 1rem;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 4vw;
+        }
+
+        @media (max-width: 900px) { .masonry { columns: 2; } }
+        @media (max-width: 560px) { .masonry { columns: 1; } }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
+            cursor: zoom-in;
+        }
+
+        .masonry-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: saturate(0.85) contrast(1.05);
+            transition: filter 0.5s ease, transform 0.6s ease;
+        }
+
+        .masonry-item:hover img {
+            filter: saturate(1.1) contrast(1.05);
+            transform: scale(1.02);
+        }
+
+        .masonry-item .gi-caption {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 2rem 1rem 0.8rem;
+            background: linear-gradient(to top, rgba(8,8,6,0.9), transparent);
+            font-size: 0.58rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(200,192,176,0.7);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .masonry-item:hover .gi-caption { opacity: 1; }
+
+        /* ── LIGHTBOX ── */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(4,4,3,0.97);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s;
+            cursor: zoom-out;
+        }
+
+        .lightbox.open { opacity: 1; pointer-events: all; }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 88vh;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem; right: 2.5rem;
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--fog);
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: 'Karla', sans-serif;
+            transition: color 0.2s;
+        }
+
+        .lightbox-close:hover { color: var(--parchment); }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 0; right: 0;
+            text-align: center;
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--fog);
+        }
+    </style>
+</head>
+<body>
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">✕ close · fechar</button>
+        <img src="" alt="" id="lightboxImg">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+    <main>
+        <!-- ── TITLE ── -->
+        <h1>Porto, Oblique</h1>
+        <h2>Coffee Table Book — Publisher Pitch</h2>
+
+        <!-- ── CONCEPT STATEMENT ── -->
+        <section class="reveal">
+            <span class="section-label">The Vision · A Visão</span>
+            <h2>Concept Statement</h2>
+            <p>
+                <strong>Porto, Oblique</strong> is a photographic exploration of Porto, Portugal, seen through a lens that resists the obvious. Rather than monuments or postcard vistas, this body of work captures the city’s layered, lateral, and surprising realities: the lived textures, fleeting gestures, and quiet juxtapositions that define Porto as it is, not as it is advertised. The oblique gaze invites viewers to encounter the city’s spirit in the overlooked, the ambiguous, and the in-between.
+            </p>
+        </section>
+
+        <!-- ── PHOTOGRAPHER BIO ANGLE ── -->
+        <section class="reveal">
+            <span class="section-label">About · Sobre</span>
+            <h2>Photographer Bio Angle</h2>
+            <p>
+                <strong>Catherine Anderson</strong> is a photographer drawn to the subtle and the sidelong. With a practice rooted in documentary and fine art photography, her work foregrounds the overlooked and the ambiguous, seeking meaning in the margins. In <em>Porto, Oblique</em>, Catherine brings an outsider's sensitivity and a resident's patience, having spent extended time in Porto during 2023–2024, immersing in its rhythms beyond the tourist gaze.
+            </p>
+        </section>
+
+        <!-- ── MARKET POSITIONING ── -->
+        <section class="reveal">
+            <span class="section-label">Audience · Público</span>
+            <h2>Market Positioning</h2>
+            <p>
+                <em>Porto, Oblique</em> is positioned for readers and collectors of contemporary photography, urban studies, and travel culture who seek authenticity over spectacle. It appeals to those interested in the real, lived experience of cities—fans of street photography, design-conscious book buyers, and travelers who value depth over checklist tourism. The book’s minimal, design-forward presentation makes it ideal for the coffee table, appealing to both art lovers and the culturally curious.
+            </p>
+        </section>
+
+        <!-- ── COMPARABLE TITLES ── -->
+        <section class="reveal">
+            <span class="section-label">Context · Contexto</span>
+            <h2>Comparable Titles</h2>
+            <ul>
+                <li><strong>Saul Leiter: Early Color</strong> — Steidl</li>
+                <li><strong>Raymond Depardon: Glasgow</strong> — Editions du Seuil</li>
+                <li><strong>Alex Webb: The Suffering of Light</strong> — Thames & Hudson</li>
+                <li><strong>Vivian Maier: Street Photographer</strong> — PowerHouse Books</li>
+                <li><strong>Lisbon: City of Light</strong> (Richard Shepherd) — Thames & Hudson</li>
+            </ul>
+            <p>
+                <em>Porto, Oblique</em> stands apart by focusing on Porto’s unique visual language, offering a contemporary, non-touristic perspective rarely seen in English-language photobooks.
+            </p>
+        </section>
+
+        <!-- ── PROPOSED BOOK STRUCTURE ── -->
+        <section class="reveal">
+            <span class="section-label">Structure · Estrutura</span>
+            <h2>Proposed Book Structure</h2>
+            <ul>
+                <li><strong>Foreword</strong> — Contextual essay on the oblique gaze and Porto’s visual culture</li>
+                <li><strong>Photo Sections</strong> (4–6 thematic chapters):<br>
+                    <ul>
+                        <li><em>Thresholds</em> — Entrances, windows, liminal spaces</li>
+                        <li><em>Surfaces</em> — Walls, textures, layers of time</li>
+                        <li><em>Transit</em> — Movement, crossings, fleeting encounters</li>
+                        <li><em>Assemblages</em> — Found compositions, urban still lifes</li>
+                        <li><em>Afterlight</em> — Dusk, reflections, ambiguity</li>
+                    </ul>
+                </li>
+                <li><strong>Short texts</strong> — Interspersed reflections or quotes (from local writers, poets, or the photographer)</li>
+                <li><strong>Image Index</strong> — Captions, locations, dates</li>
+                <li><strong>About the Photographer</strong></li>
+            </ul>
+        </section>
+
+        <!-- ── PORTFOLIO GALLERY ── -->
+        <section class="portfolio" id="work">
+            <div class="portfolio-header reveal">
+                <div class="portfolio-label">Portfolio · Portfólio</div>
+                <h2 class="portfolio-title">Selected Work</h2>
+            </div>
+
+            <div class="masonry">
+                <div class="masonry-item reveal" data-caption="Porto · 2024">
+                    <img src="https://res.cloudinary.com/djidjwtsz/image/upload/776111A9-E24E-4762-8C17-509C7182F160_1_105_c_lwzr69.jpg" alt="Woman in red coat walking past giant face mural, Porto">
+                    <div class="gi-caption">Porto · 2024</div>
+                </div>
+
+                <div class="masonry-item reveal" data-caption="Porto · Oblique · 2024">
+                    <img src="https://res.cloudinary.com/djidjwtsz/image/upload/B5227EEA-DFE5-45F9-9DAE-0D7DCC20C77E_1_105_c_wqlaq6.jpg" alt="Porto through sunglass lens">
+                    <div class="gi-caption">Porto · Oblíquo · 2024</div>
+                </div>
+
+                <div class="masonry-item reveal" data-caption="Porto · The Saint of Lost Tiles · 2024">
+                    <img src="https://res.cloudinary.com/djidjwtsz/image/upload/4BC1AE83-F21B-4CD3-9574-E9078ACF5022_1_105_c_pvptwp.jpg" alt="The Saint of Lost Tiles, Porto">
+                    <div class="gi-caption">Porto · O Santo dos Azulejos Perdidos · 2024</div>
+                </div>
+
+                <div class="masonry-item reveal" data-caption="Porto · 2024">
+                    <img src="https://res.cloudinary.com/djidjwtsz/image/upload/E8BCA260-52D1-4FB4-AA22-A20C639A516D_1_105_c_ymltk1.jpg" alt="Purple goddess poster on torn wall, Porto">
+                    <div class="gi-caption">Porto · 2024</div>
+                </div>
+
+                <div class="masonry-item reveal" data-caption="Porto · Casas para Viver · 2024">
+                    <img src="https://res.cloudinary.com/djidjwtsz/image/upload/30CC5F2C-4FD0-4E70-9644-1D1FBC1388EF_1_105_c_rwectt.jpg" alt="Casas para viver, Porto">
+                    <div class="gi-caption">Porto · Casas para Viver · 2024</div>
+                </div>
+
+                <div class="masonry-item reveal" data-caption="Porto · Não Me Apaguem · 2023">
+                    <img src="https://res.cloudinary.com/djidjwtsz/image/upload/IMG_4841_mswoy8.jpg" alt="Não Me Apaguem doorway, Porto">
+                    <div class="gi-caption">Porto · Não Me Apaguem · 2023</div>
+                </div>
+
+                <div class="masonry-item reveal" data-caption="Porto · Sombra · 2023">
+                    <img src="https://res.cloudinary.com/djidjwtsz/image/upload/0B4EBF10-21DB-493A-A74D-44FADA60EC81_1_105_c_kgswuh.jpg" alt="Shadow self-portrait, Porto">
+                    <div class="gi-caption">Porto · Sombra · 2023</div>
+                </div>
+
+                <div class="masonry-item reveal" data-caption="Porto · Praça · 2024">
+                    <img src="https://res.cloudinary.com/djidjwtsz/image/upload/F9D12BF0-94B1-4E86-86D6-2D902107E030_1_105_c_mq96vs.jpg" alt="Square from above with lone figure and teal scaffold building, Porto">
+                    <div class="gi-caption">Porto · Praça · 2024</div>
+                </div>
+
+                <div class="masonry-item reveal" data-caption="Porto · Chuva · 2023">
+                    <img src="https://res.cloudinary.com/djidjwtsz/image/upload/B907A0E9-5DE9-4211-AE65-002BC9694620_1_105_c_exv3hc.jpg" alt="Rainy train platform, umbrellas, Porto">
+                    <div class="gi-caption">Porto · Chuva · 2023</div>
+                </div>
+
+                <div class="masonry-item reveal" data-caption="Porto · Void · 2024">
+                    <img src="https://res.cloudinary.com/djidjwtsz/image/upload/BF8C1F3F-EE08-4ADF-B5EF-216B03182555_1_105_c_p2qjam.jpg" alt="VOID graffiti wall, Porto">
+                    <div class="gi-caption">Porto · Void · 2024</div>
+                </div>
+
+                <div class="masonry-item reveal" data-caption="Porto · Montra · 2024">
+                    <img src="https://res.cloudinary.com/djidjwtsz/image/upload/3545B79E-3D59-464F-9C93-CD13DE6A30DD_1_105_c_jsetde.jpg" alt="Boutique window with mannequins and reflections, Porto">
+                    <div class="gi-caption">Porto · Montra · 2024</div>
+                </div>
+
+                <div class="masonry-item reveal" data-caption="Jardim do Palácio de Cristal · 2023">
+                    <img src="https://res.cloudinary.com/djidjwtsz/image/upload/9D104744-B8F7-4153-B256-7C29369E97B4_1_105_c_zbnwp8.jpg" alt="Jardim do Palácio de Cristal with Douro in background">
+                    <div class="gi-caption">Jardim do Palácio de Cristal · 2023</div>
+                </div>
+            </div>
+        </section>
+
+    <!-- ── NPD FOOTER SIGNATURE ── -->
+    <footer>
+        <div class="footer-copyright">© 2026 Catherine Anderson · Oblique — A Photography Practice</div>
+        <div class="npd-footer-container">
+            <div class="npd-footer">
+                <div class="npd-box">
+                    <span class="npd-n">N</span>
+                    <span class="npd-dot"></span>
+                </div>
+                <a class="npd-credit" href="https://nullpointdesign.github.io" target="_blank" rel="noopener">Site design by Null Point Design</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // ── SCROLL REVEAL ──
+        const reveals = document.querySelectorAll('.reveal');
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.15 });
+        reveals.forEach(el => io.observe(el));
+
+        // ── LIGHTBOX ──
+        const lightbox    = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCap = document.getElementById('lightboxCaption');
+        const lbClose     = document.getElementById('lightboxClose');
+
+        document.querySelectorAll('.masonry-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                if (!img) return;
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightboxCap.textContent = item.dataset.caption || '';
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        lightbox.addEventListener('click', e => { if (e.target === lightbox || e.target === lightboxImg) closeLightbox(); });
+        lbClose.addEventListener('click', closeLightbox);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
+</body>
+</html>
